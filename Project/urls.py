@@ -14,8 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path 
+from Movie import api
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #FBV GET POST LIST
+    path('rest/fbv' ,api.fbvlistapi )
 ]
