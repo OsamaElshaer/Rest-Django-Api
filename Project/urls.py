@@ -14,13 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path 
+from django.urls import path , include
 from Movie import api
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+
     #FBV GET POST LIST
-    path('rest/fbv' ,api.fbvlistapi )
+    path('rest/fbv' ,api.fbvlistapi ), 
+
+    #FBV GET PUT DELETE
+    path('rest/fbv/<slug:slug>' ,api.fbvslugapi),
+
+    #api auth url
+    path('api-auth/', include('rest_framework.urls')),
+
+    #Token authentication
+    path('api-token-auth', obtain_auth_token),
 ]
