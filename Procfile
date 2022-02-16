@@ -1,1 +1,1 @@
-web: gunicorn Project.wsgi --log-file -
+web: gunicorn Project.wsgi --timeout 0 --keep-alive 5 --log-level debug --log-file -

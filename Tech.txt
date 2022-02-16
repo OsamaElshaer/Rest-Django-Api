@@ -46,7 +46,7 @@ Heroku > Create new App > #app-name
         psycopg2
     * touch Procfile
         Procfile >
-            web: gunicorn #app-name.wsgi --log-file -
+            web: gunicorn #project-name.wsgi --log-file -
     * touch runtime.txt
         runtime > 
             python-3.8.5
