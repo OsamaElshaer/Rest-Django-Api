@@ -38,7 +38,7 @@ Heroku > Create new App > meal-rater
             application = Cling(get_wsgi_application())
         settings > 
             STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
-    * pip freeze > requirements_local.txt 
+    * True
       touch requirements.txt   
         -r requirements_local.txt
         gunicorn
@@ -50,7 +50,7 @@ Heroku > Create new App > meal-rater
         runtime > 
             python-3.8.5
     * allowed hosts @settings 
-        ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'mealraterer.herokuapp.com]
+        ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'mealraterer.herokuapp.com']
     * remove the .env from .ignore 
     
     * deploy code to heroku >> use git automatice after push 
