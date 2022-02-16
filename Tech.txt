@@ -38,6 +38,7 @@ Heroku > Create new App > #app-name
             application = Cling(get_wsgi_application())
         settings > 
             STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
+        
     * pip freeze > requirements_local.txt 
       touch requirements.txt   
         -r requirements_local.txt
@@ -54,8 +55,10 @@ Heroku > Create new App > #app-name
     * remove the .env from .ignore 
     
     * deploy code to heroku >> use git automatice after push 
-
+    * before deploy
+        python manage.py collectstatic --noinput
     * after deploy 
         heroku git:remote -a #Herokuapp
+        heroku config:set DISABLE_COLLECTSTATIC=1
         heroku run python3 manage.py migrate 
         heroku run python3 manage.py createsuperuser
