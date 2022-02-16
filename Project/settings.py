@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 
-ALLOWED_HOSTS = ['127.0.0.1','.localhost']
+ALLOWED_HOSTS = ['127.0.0.1','.localhost','rest-django-api.herokuapp.com']
 
 CORS_ALLOWED_ORIGINS = [
 
