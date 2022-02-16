@@ -12,7 +12,7 @@ CORS
         "http://127.0.0.1:9000"
     ]
 
-Heroku > Create new App > meal-rater
+Heroku > Create new App > #app-name
    * brew tap heroku/brew && brew install heroku >> macos
    * heroku login
    * pip install python-decouple
@@ -38,24 +38,24 @@ Heroku > Create new App > meal-rater
             application = Cling(get_wsgi_application())
         settings > 
             STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
-    * True
+    * pip freeze > requirements_local.txt 
       touch requirements.txt   
         -r requirements_local.txt
         gunicorn
         psycopg2
     * touch Procfile
         Procfile >
-            web: gunicorn mealrate.wsgi --log-file -
+            web: gunicorn #app-name.wsgi --log-file -
     * touch runtime.txt
         runtime > 
             python-3.8.5
     * allowed hosts @settings 
-        ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'mealraterer.herokuapp.com']
+        ALLOWED_HOSTS = ['127.0.0.1','.localhost', '#']
     * remove the .env from .ignore 
     
     * deploy code to heroku >> use git automatice after push 
 
     * after deploy 
-        heroku git:remote -a mealrater
+        heroku git:remote -a #Herokuapp
         heroku run python3 manage.py migrate 
         heroku run python3 manage.py createsuperuser
